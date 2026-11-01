@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="Karnataka to Cosmos — an immersive space exploration experience celebrating Karnataka Rajyotsava, science, and India's journey into space.">
+  <title>Karnataka to Cosmos | A Rajyotsava Space Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="boot-screen" id="bootScreen">
+    <div class="boot-orbit"><span></span></div>
+    <p>KARNATAKA TO COSMOS</p><small>INITIALIZING EXPLORATION SYSTEM</small>
+    <div class="boot-track"><span></span></div>
+  </div>
+
+  <header class="topbar">
+    <a class="wordmark" href="#home" aria-label="Karnataka to Cosmos home">
+      <span class="mark">ಕ</span><span>KARNATAKA <b>TO COSMOS</b></span>
+    </a>
+    <nav class="desktop-nav">
+      <a href="#explore">Explore</a><a href="#missions">India in Space</a><a href="#data">Live Data</a>
+    </nav>
+    <div class="top-actions"><span class="status-dot"></span><span class="status-label">SPACE SYSTEMS ONLINE</span><button id="menuButton" class="menu-button" aria-label="Open menu">☰</button></div>
+    <nav class="mobile-nav" id="mobileNav"><a href="#explore">Explore</a><a href="#missions">India in Space</a><a href="#data">Live Data</a></nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div id="heroCanvas" class="hero-canvas" aria-label="Interactive 3D Earth and satellite visualization"></div>
+      <div class="hero-vignette"></div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="karnataka-stripe"><i></i><i></i></span> KARNATAKA RAJYOTSAVA · NOVEMBER 01</p>
+        <p class="micro-label">A DIGITAL JOURNEY FROM OUR HOME TO THE STARS</p>
+        <h1>Our roots.<br><em>Beyond the stars.</em></h1>
+        <p class="hero-description">From Karnataka's spirit of discovery to India's cosmic ambitions — explore the universe through an immersive, interactive space experience.</p>
+        <div class="hero-buttons"><a href="#explore" class="button primary-button">Begin exploration <span>↗</span></a><a href="#missions" class="button ghost-button">India's space journey <span>↓</span></a></div>
+        <div class="hero-note"><span class="live-pulse"></span> INTERACTIVE 3D EXPERIENCE <span class="note-divider">/</span> <span>VISUAL SIMULATIONS CLEARLY LABELLED</span></div>
+      </div>
+      <div class="hero-coordinate mono">12°58′ N&nbsp; 77°35′ E<br><span>BENGALURU · KARNATAKA</span></div>
+      <div class="hero-scroll">SCROLL TO EXPLORE <span></span></div>
+      <div class="hero-corner mono">KTC // 001<br>EARTH OBSERVATION</div>
+    </section>
+
+    <section class="ticker" aria-label="Project theme">
+      <div class="ticker-inner"><span>ಜಯ ಕರ್ನಾಟಕ</span><i>✦</i><span>EXPLORE THE UNKNOWN</span><i>✦</i><span>INDIA TO THE MOON & BEYOND</span><i>✦</i><span>ಜಯ ಕರ್ನಾಟಕ</span><i>✦</i><span>EXPLORE THE UNKNOWN</span><i>✦</i></div>
+    </section>
+
+    <section class="explore-section section-wrap" id="explore">
+      <div class="section-heading">
+        <div><p class="eyebrow">01 / THE COSMIC NEIGHBOURHOOD</p><h2>One universe.<br><em>Endless frontiers.</em></h2></div>
+        <p class="section-intro">Choose a world to focus the camera. Drag to rotate, scroll to zoom, and explore a stylized planetary scene built in Three.js.</p>
+      </div>
+      <div class="universe-panel">
+        <div id="solarCanvas" class="solar-canvas" aria-label="Interactive 3D planetary scene"></div>
+        <div class="scene-label top-left-label"><span class="scene-pip"></span> PLANETARY VIEW <small>INTERACTIVE · NOT TO SCALE</small></div>
+        <div class="scene-label bottom-left-label mono" id="sceneStatus">SCENE: SOLAR SYSTEM // SIMULATED ORBITS</div>
+        <div class="planet-controls" id="planetControls">
+          <button class="planet-button active" data-planet="earth"><span class="planet-dot earth-dot"></span>Earth</button>
+          <button class="planet-button" data-planet="moon"><span class="planet-dot moon-dot"></span>Moon</button>
+          <button class="planet-button" data-planet="mars"><span class="planet-dot mars-dot"></span>Mars</button>
+          <button class="planet-button" data-planet="jupiter"><span class="planet-dot jupiter-dot"></span>Jupiter</button>
+          <button class="planet-button" data-planet="reset">Reset view ↺</button>
+        </div>
+        <div class="planet-info" id="planetInfo"><span class="planet-kicker">HOME PLANET</span><h3>Earth</h3><p>Our pale blue dot — a living world and the starting point for every journey into space.</p><span class="data-tag">3D VISUALIZATION</span></div>
+      </div>
+      <p class="disclaimer"><b>Simulation note:</b> Planet sizes, distances, lighting, and orbital motion in this scene are artistic visualizations, not a scale-accurate astronomical model.</p>
+    </section>
+
+    <section class="missions-section" id="missions">
+      <div class="section-wrap">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / INDIA'S SPACE JOURNEY</p><h2>Curiosity is our<br><em>launch vehicle.</em></h2></div>
+          <p class="section-intro">A curated introduction to India's space programme and the role of Bengaluru in the country's space ecosystem.</p>
+        </div>
+        <div class="mission-grid">
+          <article class="mission-card mission-feature">
+            <div class="mission-number">01 <span> / ORBIT</span></div><div class="mission-icon">◉</div>
+            <p class="card-kicker">EARTH OBSERVATION</p><h3>Understand our home.</h3><p>Satellites help observe weather, agriculture, forests, water resources and changes across our planet.</p>
+            <span class="card-footer">SCIENCE · EARTH SYSTEMS</span>
+          </article>
+          <article class="mission-card">
+            <div class="mission-number">02 <span> / LUNAR</span></div><div class="mission-icon">☾</div>
+            <p class="card-kicker">LUNAR EXPLORATION</p><h3>Reach new worlds.</h3><p>India's Chandrayaan programme has expanded scientific exploration of the Moon.</p>
+            <span class="card-footer">SCIENCE · THE MOON</span>
+          </article>
+          <article class="mission-card">
+            <div class="mission-number">03 <span> / DEEP SPACE</span></div><div class="mission-icon">✳</div>
+            <p class="card-kicker">PLANETARY SCIENCE</p><h3>Look further out.</h3><p>Mars Orbiter Mission and Aditya-L1 reflect India's ambition to study worlds and our Sun.</p>
+            <span class="card-footer">SCIENCE · SOLAR SYSTEM</span>
+          </article>
+        </div>
+        <div class="bengaluru-strip"><div class="bengaluru-symbol">BLR<span>↗</span></div><div><p class="eyebrow">KARNATAKA CONNECTION</p><h3>Bengaluru: a key hub in India's space story.</h3><p>ISRO headquarters and major space research organisations are based in Bengaluru. This project celebrates the talent, research and engineering that help turn curiosity into exploration.</p></div><a href="https://www.isro.gov.in/" target="_blank" rel="noopener noreferrer" class="external-link">Explore ISRO <span>↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="data-section section-wrap" id="data">
+      <div class="section-heading">
+        <div><p class="eyebrow">03 / MISSION INTELLIGENCE</p><h2>The cosmos,<br><em>in real data.</em></h2></div>
+        <p class="section-intro">Connect to NASA's public APIs to fetch the astronomy picture of the day and near-Earth object data. API results are kept separate from the simulated 3D scene.</p>
+      </div>
+      <div class="data-grid">
+        <article class="data-card apod-card">
+          <div class="data-card-header"><span>NASA / APOD</span><span class="live-label"><i></i> API</span></div>
+          <div id="apodImage" class="apod-image"><div class="loading-orbit"></div><span>Loading astronomy image…</span></div>
+          <div class="apod-copy"><p class="card-kicker">ASTRONOMY PICTURE OF THE DAY</p><h3 id="apodTitle">Waiting for the universe…</h3><p id="apodDescription">Connecting to NASA's public Astronomy Picture of the Day API.</p><a id="apodLink" class="external-link" href="https://apod.nasa.gov/apod/astropix.html" target="_blank" rel="noopener noreferrer">Open NASA APOD <span>↗</span></a></div>
+        </article>
+        <article class="data-card neo-card">
+          <div class="data-card-header"><span>NASA / NEOWS</span><span class="live-label"><i></i> API</span></div>
+          <p class="card-kicker">NEAR-EARTH OBJECTS</p><h3>Asteroids near Earth</h3><p class="neo-intro">A snapshot of objects in NASA's feed for the selected UTC date. Close approach does not automatically mean danger.</p>
+          <div class="neo-summary"><div><strong id="neoCount">—</strong><span>Objects in feed</span></div><div><strong id="neoHazard">—</strong><span>Flagged potentially hazardous</span></div></div>
+          <div id="neoList" class="neo-list"><p class="placeholder-line">Requesting near-Earth object data…</p></div>
+          <p class="data-footnote">Source: NASA Near Earth Object Web Service (NeoWs). Classification follows NASA's feed; this is not a collision prediction or warning system.</p>
+        </article>
+      </div>
+      <div class="api-controls">
+        <div><span class="control-label">API CONNECTION</span><p id="apiStatus" aria-live="polite">Connecting to NASA public APIs…</p></div>
+        <button id="refreshData" class="button ghost-dark">Refresh data ↻</button>
+      </div>
+      <p class="disclaimer"><b>Data honesty:</b> NASA API cards display retrieved API data and the fetch date. The 3D planets, satellites, orbital paths, and motion effects elsewhere on this site are simulations for learning and visual storytelling.</p>
+    </section>
+
+    <section class="closing-section">
+      <div class="closing-stars"></div><div class="closing-content"><p class="eyebrow">FROM KARNATAKA, WITH CURIOSITY</p><h2>Our sky has<br><em>no borders.</em></h2><p>Celebrate the spirit of Karnataka. Keep asking questions. Keep looking up.</p><p class="closing-kannada">ಜಯ ಕರ್ನಾಟಕ · ಜಯ ವಿಜ್ಞಾನ ❤️💛</p><a href="#home" class="button primary-button">Return to Earth ↑</a></div>
+      <div class="closing-orb"></div>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="wordmark" href="#home"><span class="mark">ಕ</span><span>KARNATAKA <b>TO COSMOS</b></span></a><span>A student-built digital tribute · HTML / CSS / Three.js</span><span class="mono">KTC // END OF TRANSMISSION</span></footer>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
